@@ -226,20 +226,15 @@ C_sanyha
 barplot(C_sanyha)
 ```
 
-
 *Haven't set codes yet*
 
-Distribution of Comorbidities
+Distribution of Comorbidities (Choose some?)
 ```{r}
-#Restructure Variable to include all comorbidities
-
-
-#1=inpt, 2=outpt
+#
 C_setting<- summary(as.factor(CD$setting))
 C_setting
 barplot(C_setting)
 ```
-
 
 Distribution of Medications
 ```{r}
@@ -256,6 +251,8 @@ boxplot(CD$restinghr)
 hist(CD$restinghr)
 ```
 
+#Univariate Analysis of Outcome Variables
+
 
 #Questionaire Analysis 
 
@@ -268,14 +265,15 @@ QDASI
 STRESS
 
 
-##Bivariate Analysis by HF DX
+##Bivariate Analysis by subgroup of HF
+
+
+##Bivariate Analysis by Depression 
+Look for significant correlations and identify potential covariates that I need to control for. 
 ```{r}
 #Scatterplot BMI*AGE to observe for any trends
 plot(Meta$BMI_CORRECTED, Meta$AGE_YEARS)
 ```
 
+##Bivariate Analysis with outcome variable
 
-##Bivariate Analysis by HF Subgroup
-
-
-##Bivariate Analysis by Depression
