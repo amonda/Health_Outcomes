@@ -388,6 +388,11 @@ barplot(hospreasonyr10)
 #Questionnaire Analysis 
 
 PHQ
+```{r}
+#gather a sum and find out if its weighted or if there is a scoring algorithm to add 
+
+
+```
 
 BHQ
 
@@ -409,6 +414,8 @@ plot(Meta$BMI_CORRECTED, Meta$AGE_YEARS)
 ##Bivariate Analysis with outcome variable
 
 
+
+##Create Table One
 
 
 
