@@ -117,7 +117,7 @@ boxplot(CD$hfdiag)
 hist(CD$hfdiag)
 ```
 
-### Univariate Analysis Categorical Variables 
+### Univariate Analysis Categorical Variables
 Distribution of Gender
 ```{r}
 #0=Female, 1=Male
@@ -226,6 +226,22 @@ C_sanyha
 barplot(C_sanyha)
 ```
 
+Distribution of HF Type
+```{r}
+#1=systolic, 2=preserved
+C_hftype<- summary(as.factor(CD$hftype))
+C_hftype
+barplot(C_hftype)
+```
+
+Distribution of HF Subtype
+```{r}
+#1=sIschemic Cardiomyopathy, 2=Non-ischemic, non-valvular Cardiomyopathy, 3=Valvular Disease-related Cardiomyopathy, 4=Genetic Syndrome, 5=Other
+C_hftype<- summary(as.factor(CD$hftype))
+C_hftype
+barplot(C_hftype)
+```
+
 *Haven't set codes yet*
 
 Distribution of Comorbidities (Choose some?)
@@ -244,17 +260,132 @@ C_setting
 barplot(C_setting)
 ```
 
-Distribution of Resting HR
-```{r}
-summary(CD$restinghr)
-boxplot(CD$restinghr)
-hist(CD$restinghr)
-```
 
 #Univariate Analysis of Outcome Variables
+Distribution of Patient Status
+```{r}
+#0=alive, 1= dead, 2=unknown
+C_pstatusyr<- summary(as.factor(CD$pstatusyr))
+C_pstatusyr
+barplot(C_pstatusyr)
+```
+
+Distribution of Source of Death Record
+```{r}
+#1=family contact, 2=chart review, 3=SSDI/Internet Search, 4=National Death Index
+C_deathrecordyr<- summary(as.factor(CD$deathrecordyr))
+C_deathrecordyr
+barplot(C_deathrecordyr)
+```
+
+Distribution of Date of death or last known alive
+```{r}
+#text entered redo code
+C_lastaliveyr<- summary(as.factor(CD$lastaliveyr))
+C_lastaliveyr
+barplot(C_lastaliveyr)
+```
+
+Distribution of Cause of Death
+```{r}
+#1= Immediate cardiac death; within one hour after onset of symptoms
+#2=Sudden cardiac death; within 24 hours
+#3=Cardiac death; not sudden or immediate
+#4=Vascular; non-cardiac
+#5=De nite non-cardiovascular death
+#6= suicide
+#7= unknown
+#8=Probably cardiac death
+#9=Probable non-cardiovascular death
+C_causeofdeathyr<- summary(as.factor(CD$causeofdeathyr))
+C_causeofdeathyr
+barplot(C_causeofdeathyr)
+```
+
+Distribution of Associated events leading to patient's death
+```{r}
+#1= Acute myocardial infarction
+#2=CHF
+#3=Arrythmia
+#4=Stroke
+#5=Cancer
+#6=Trauma
+#7=During Surgery
+#8= During Percutaneous Intervention
+#9= During Catheterization
+#10=Post-Surgery
+#11= Post-PI
+#12=CardiogenicShock
+#13=Other/Unknown
+C_setting<- summary(as.factor(CD$setting))
+C_setting
+barplot(C_setting)
+```
+
+Distribution of How many hospitalizations since Enrollment 
+```{r}
+#code as text so recode to show text? then categorize into groups or merge hospitalized yes no
+C_setting<- summary(as.factor(CD$setting))
+C_setting
+barplot(C_setting)
+
+#Hospitalized Year (1=yes, 0=no)
+barplot(hospitalizedyr1)
+barplot(hospitalizedyr2)
+barplot(hospitalizedyr3)
+barplot(hospitalizedyr4)
+barplot(hospitalizedyr5)
+barplot(hospitalizedyr6)
+barplot(hospitalizedyr7)
+barplot(hospitalizedyr8)
+barplot(hospitalizedyr9)
+barplot(hospitalizedyr10)
 
 
-#Questionaire Analysis 
+#Hospitalized visit type (1=outpatient, 2=inpatient)
+barplot(visitypeyr1)
+barplot(visitypeyr2)
+barplot(visitypeyr3)
+barplot(visitypeyr4)
+barplot(hvisitypeyr5)
+barplot(visitypeyr6)
+barplot(visitypeyr7)
+barplot(visitypeyr8)
+barplot(visitypeyr9)
+barplot(visitypeyr10)
+
+#Hospitalized Reason
+#1=chest pain/angina
+#2=MI
+#3=CHF
+#4=Cardiac Cath
+#5=PCI
+#6=PTA
+#7=CABG
+#8=Valve Surgery
+#9=HT
+#10=Arrythmia
+#11=Cardioversion
+#12=Pacemaker
+#13=Defibrillator
+#14=Stress Test
+#15=Vascular
+#16=Stroke
+#17=TIA
+#18=Other
+barplot(hospreasonyr1)
+barplot(hospreasonyr2)
+barplot(hospreasonyr3)
+barplot(hospreasonyr4)
+barplot(hospreasonyr5)
+barplot(hospreasonyr6)
+barplot(hospreasonyr7)
+barplot(hospreasonyr8)
+barplot(hospreasonyr9)
+barplot(hospreasonyr10)
+```
+
+#Questionnaire Analysis 
 
 PHQ
 
@@ -276,4 +407,20 @@ plot(Meta$BMI_CORRECTED, Meta$AGE_YEARS)
 ```
 
 ##Bivariate Analysis with outcome variable
+
+
+
+
+
+##Aim 1 Outcomes by Depression
+```{r}
+
+```
+
+
+
+##Aim 2 Outcomes by Depression based on Type and Subtype of HF
+```{r}
+
+```
 
