@@ -1,0 +1,27 @@
+---
+title: "NHANES_Codebook"
+author: "Alyssa Monda"
+date: "9/7/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Data is taken from: National Health and Nutrition Examination Survey 2005-2006 Data Documentation, Codebook, and Frequencies
+
+
+##Data being pulled in
+
+###HIV
+HIV Antibody Test, CD4+ T Lymphocytes & CD8+ T Cells (HIV_D)
+Data File: HIV_D.xpt
+Variables: 
+-SEQN: respondent sequence number (M&F age 18-49)
+-LEBDHI: HIV antibody test result (19 are positive)
+-LBXCD8: CD8 (cells/mm3)
+-LBXCD4: CD4 (cells/mm3)
+
+
+

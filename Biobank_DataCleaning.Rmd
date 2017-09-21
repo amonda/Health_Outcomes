@@ -1,0 +1,110 @@
+---
+title: "Biobank"
+author: "Alyssa Monda"
+date: "9/21/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyverse)
+library(knitr)
+```
+
+##Question: 
+Does the relationship between depression and heartfailure differ based upon heart failure categorization. 
+
+##Aims: 
+1: Investigate the relationship between depression and future heart failure events. (Death, CV death, hospitalizations, Depression as measured by PHQ)
+
+2:Investigate differences in the relationship between depression and future cardiac events varies based on heart failure categorization (ischemic vs. non ischemic HF, also HFpEF vs. HFrEF).
+
+##Load data into R
+
+```{r}
+#Load data into R and assign data to the name CD
+
+
+```
+
+## Univariate Analysis Continuous Variables 
+Distriution of Age
+```{r}
+summary(CD$age)
+boxplot(CD$age)
+hist(CD$age)
+```
+
+Distriution of BMI
+```{r}
+summary(CD$blbmi)
+boxplot(CD$blbmi)
+hist(CD$blbmi)
+```
+
+Distriution of BSA
+```{r}
+summary(CD$bsa)
+boxplot(CD$bsa)
+hist(CD$bsa)
+```
+
+Distriution of Resting SBP
+```{r}
+summary(CD$restingsysbp)
+boxplot(CD$restingsysbp)
+hist(CD$restingsysbp)
+```
+
+Distriution of Resting DBP
+```{r}
+summary(CD$restingdiabp)
+boxplot(CD$restingdiabp)
+hist(CD$restingdiabp)
+```
+
+Distriution of Resting HR
+```{r}
+summary(CD$restinghr)
+boxplot(CD$restinghr)
+hist(CD$restinghr)
+```
+
+
+## Univariate Analysis Categorical Variables 
+Distribution of Hospital
+```{r}
+C_hosp<- summary(as.factor(CD$hosp))
+C_hosp
+barplot(C_hosp)
+```
+
+Distribution of Zip Code
+```{r}
+C_zip<- summary(as.factor(CD$zip))
+C_zip
+barplot(C_zip)
+```
+
+Distribution of Race
+```{r}
+#Race
+C_race<- summary(as.factor(CD$race))
+C_race
+barplot(C_race)
+
+#Race_Other
+C_raceO<- summary(as.factor(CD$raceoth))
+C_raceO
+barplot(C_raceO)
+```
+
+
+##Bivariate Analysis
+
+```{r}
+#Scatterplot BMI*AGE to observe for any trends
+plot(Meta$BMI_CORRECTED, Meta$AGE_YEARS)
+```
+
