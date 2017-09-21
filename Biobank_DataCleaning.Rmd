@@ -43,11 +43,10 @@ C_htfail
 barplot(C_htfail)
 ```
 
-
 *Include EF measures as inclusion criteria?*
 
-
-## Univariate Analysis Continuous Variables 
+##Data Cleaning and Initial Descriptive Statistics 
+### Univariate Analysis Continuous Variables 
 Distrbiution of Age
 ```{r}
 summary(CD$age)
@@ -104,8 +103,21 @@ boxplot(CD$restinghr)
 hist(CD$restinghr)
 ```
 
+Distribution of Latest Ejection Fraction
+```{r}
+summary(CD$ef)
+boxplot(CD$ef)
+hist(CD$ef)
+```
 
-## Univariate Analysis Categorical Variables 
+Distribution of Year of HF diagnosis
+```{r}
+summary(CD$hfdiag)
+boxplot(CD$hfdiag)
+hist(CD$hfdiag)
+```
+
+### Univariate Analysis Categorical Variables 
 Distribution of Gender
 ```{r}
 #0=Female, 1=Male
@@ -203,10 +215,67 @@ C_zip
 barplot(C_zip)
 ```
 
+Distribution of NYHA
+```{r}
+#1=I can perform all physical activity without getting short of breath or tired, or having palpitations.
+#2=I get short of breath or tired, or have palpitations when performing more strenuous activities. For example, walking on steep inclines or walking up several  ights of steps.
+#3=I get short of breath or tired, or have palpitations when performing day to day activities. For example, walking on a  at surface.
+#4=I feel breathless at rest, and am mostly housebound. I am unable to carry out any physical activity without getting short of breath or tired, or having palpitations.
+C_sanyha<- summary(as.factor(CD$sanyha))
+C_sanyha
+barplot(C_sanyha)
+```
 
-##Bivariate Analysis
+
+*Haven't set codes yet*
+
+Distribution of Comorbidities
+```{r}
+#Restructure Variable to include all comorbidities
+
+
+#1=inpt, 2=outpt
+C_setting<- summary(as.factor(CD$setting))
+C_setting
+barplot(C_setting)
+```
+
+
+Distribution of Medications
+```{r}
+#1=inpt, 2=outpt
+C_setting<- summary(as.factor(CD$setting))
+C_setting
+barplot(C_setting)
+```
+
+Distribution of Resting HR
+```{r}
+summary(CD$restinghr)
+boxplot(CD$restinghr)
+hist(CD$restinghr)
+```
+
+
+#Questionaire Analysis 
+
+PHQ
+
+BHQ
+
+QDASI
+
+STRESS
+
+
+##Bivariate Analysis by HF DX
 ```{r}
 #Scatterplot BMI*AGE to observe for any trends
 plot(Meta$BMI_CORRECTED, Meta$AGE_YEARS)
 ```
 
+
+##Bivariate Analysis by HF Subgroup
+
+
+##Bivariate Analysis by Depression
