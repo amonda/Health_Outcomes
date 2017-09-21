@@ -21,50 +21,83 @@ Does the relationship between depression and heartfailure differ based upon hear
 2:Investigate differences in the relationship between depression and future cardiac events varies based on heart failure categorization (ischemic vs. non ischemic HF, also HFpEF vs. HFrEF).
 
 ##Load data into R
-
 ```{r}
-#Load data into R and assign data to the name CD
+#Load data into R and assign data to the name CDT
 
 
 ```
 
+##Filter Individuals from data set who meet inclusion criteria (Diagnosed with HF, Age 65+)
+```{r}
+#Subsset by age to ensure minimum age is 65
+CD <-subset(CDT, age>=65)
+summary(CD$age)
+
+#Subset by HF (1=yes, 0=No)
+CD <-subset(CDT, htfail=1)
+summary(CD$htfail)
+
+#Summarize by HF based on Chart Review Variable to make sure only those with dx of HF are included in the sample
+C_htfail<- summary(as.factor(CD$htfail))
+C_htfail
+barplot(C_htfail)
+```
+
+
+*Include EF measures as inclusion criteria?*
+
+
 ## Univariate Analysis Continuous Variables 
-Distriution of Age
+Distrbiution of Age
 ```{r}
 summary(CD$age)
 boxplot(CD$age)
 hist(CD$age)
 ```
 
-Distriution of BMI
+Distribution of Height (cm)
+```{r}
+summary(CD$subhtcm)
+boxplot(CD$subhtcm)
+hist(CD$subhtcm)
+```
+
+Distribution of Weight (kg)
+```{r}
+summary(CD$subwtkg)
+boxplot(CD$subwtkg)
+hist(CD$subwtkg)
+```
+
+Distribution of BMI
 ```{r}
 summary(CD$blbmi)
 boxplot(CD$blbmi)
 hist(CD$blbmi)
 ```
 
-Distriution of BSA
+Distribution of BSA
 ```{r}
 summary(CD$bsa)
 boxplot(CD$bsa)
 hist(CD$bsa)
 ```
 
-Distriution of Resting SBP
+Distribution of Resting SBP
 ```{r}
 summary(CD$restingsysbp)
 boxplot(CD$restingsysbp)
 hist(CD$restingsysbp)
 ```
 
-Distriution of Resting DBP
+Distribution of Resting DBP
 ```{r}
 summary(CD$restingdiabp)
 boxplot(CD$restingdiabp)
 hist(CD$restingdiabp)
 ```
 
-Distriution of Resting HR
+Distribution of Resting HR
 ```{r}
 summary(CD$restinghr)
 boxplot(CD$restinghr)
@@ -73,23 +106,25 @@ hist(CD$restinghr)
 
 
 ## Univariate Analysis Categorical Variables 
+Distribution of Gender
+```{r}
+#0=Female, 1=Male
+C_gend<- summary(as.factor(CD$gend))
+C_gend
+barplot(C_gend)
+```
+
 Distribution of Hospital
 ```{r}
+#0=EUH, 1=Midtown, 2=VA, 3=Grady, 4=Other
 C_hosp<- summary(as.factor(CD$hosp))
 C_hosp
 barplot(C_hosp)
 ```
 
-Distribution of Zip Code
-```{r}
-C_zip<- summary(as.factor(CD$zip))
-C_zip
-barplot(C_zip)
-```
-
 Distribution of Race
 ```{r}
-#Race
+#Race 1=causcasian, 2=AA, 3=Hispanic, 4=Asian, 5=Native American, 6=Pacific Islander, 7=Other
 C_race<- summary(as.factor(CD$race))
 C_race
 barplot(C_race)
@@ -100,9 +135,76 @@ C_raceO
 barplot(C_raceO)
 ```
 
+Distribution of Marital Status
+```{r}
+#1=married, 2=widowed, 3=divorced, 4=separated, 5=never married
+C_ms<- summary(as.factor(CD$ms))
+C_ms
+barplot(C_ms)
+```
+
+Distribution of Employment Status
+```{r}
+#1=full time, 2=part time, 3=unemployed, 4=disabled, 5=retired
+C_es<- summary(as.factor(CD$es))
+C_es
+barplot(C_es)
+```
+
+Distribution of Education
+```{r}
+#1=elementary/middle, 2=some high school, 3=HS grad, 4=some college, 5=college grad, 6=graduate education or degree
+C_educ<- summary(as.factor(CD$educ))
+C_educ
+barplot(C_educ)
+```
+
+Distribution of Setting
+```{r}
+#1=inpt, 2=outpt
+C_setting<- summary(as.factor(CD$setting))
+C_setting
+barplot(C_setting)
+```
+
+Distribution of Reason for Catheterization
+```{r}
+#Coded Reason
+#1=positive stress test, 2=ST elevation MI, 3=Non-ST elevation myocardial, 4=unstable angina, 5=valuvular intervention, 6=peripheral intervention, 7=preop cardiac clearance, 8=evaluation for non-cardiac issues, 9=heart transplant, 10=HF, 11=Other, 12=TAVR
+C_adm_reason <- summary(as.factor(CD$adm_reason))
+C_adm_reason 
+barplot(C_aadm_reason)
+
+#Other Reason
+C_admreason_other <- summary(as.factor(CD$admreason_other))
+C_admreason_other 
+barplot(C_admreason_other)
+```
+
+Distribution of Date of Catheterization
+```{r}
+#categorize by season?
+
+
+#Summary
+C_admcathdate<- summary(as.factor(CD$admcathdate))
+C_admcathdate
+barplot(C_admcathdate)
+```
+
+Distribution of Zip Code (How to analyze this? will it show up as numeric?)
+```{r}
+#Categorize into parts of atlanta?
+
+
+#Summary
+C_zip<- summary(as.factor(CD$zip))
+C_zip
+barplot(C_zip)
+```
+
 
 ##Bivariate Analysis
-
 ```{r}
 #Scatterplot BMI*AGE to observe for any trends
 plot(Meta$BMI_CORRECTED, Meta$AGE_YEARS)
