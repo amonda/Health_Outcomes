@@ -22,36 +22,63 @@ Does the relationship between depression and heartfailure differ based upon hear
 
 ##Load data into R
 ```{r}
-#Load data into R and assign data to the name CDT
+#Load outcomes data into R and assign data to the name Out
+library(readr)
+Out <- read_csv("~/Desktop/outcomes.csv")
+View(outcomes)
 
+#Load Metadata as MD
+library(readr)
+MD <- read_csv("~/Desktop/EmoryCardiovascularB_DATA_LABELS_2017-09-28_2124.csv")
+View(EmoryCardiovascularB_DATA_LABELS_2017_09_28_2124)
+
+#Merge Two data sets--- unique ID is different so change name first to match
+MD$uniqueid=MD$UniqueID
+CDT<-merge(MD, Out, by="uniqueid")
 
 ```
 
-##Filter Individuals from data set who meet inclusion criteria (Diagnosed with HF, Age 65+)
+##Rename Variables
 ```{r}
-#Subsset by age to ensure minimum age is 65
+as.data.frame(CDT)
+
+#Rename Age at Enrollment
+CDT$age=CDT$"Age at Enrollment"
+summary(CDT$age)
+
+#Rename Heart Failure
+CDT$htfail=CDT$'Heart Failure'
+CDT$htfail[CDT$htfail=="Yes"] <- "1"
+CDT$htfail[CDT$htfail=="No"] <- "0"
+as.factor(CDT$htfail)
+CDT$htfail
+
+```
+
+
+##Filter Individuals from data set who meet inclusion criteria (Diagnosed with HF, "age" 65+)
+```{r}
+#Subsset by "age" to ensure minimum "age" is 65
 CD <-subset(CDT, age>=65)
-summary(CD$age)
+summary(CD$`age`)
 
 #Subset by HF (1=yes, 0=No)
-CD <-subset(CDT, htfail=1)
-summary(CD$htfail)
+as.double(CD$htfail)
+CDH <-subset(CD, htfail== 1)
+summary(CDH$htfail)
+CDH$htfail
 
-#Summarize by HF based on Chart Review Variable to make sure only those with dx of HF are included in the sample
-C_htfail<- summary(as.factor(CD$htfail))
-C_htfail
-barplot(C_htfail)
 ```
 
 *Include EF measures as inclusion criteria?*
 
 ##Data Cleaning and Initial Descriptive Statistics 
 ### Univariate Analysis Continuous Variables 
-Distrbiution of Age
+Distrbiution of "age"
 ```{r}
 summary(CD$age)
-boxplot(CD$age)
-hist(CD$age)
+boxplot(CD$"age")
+hist(CD$"age")
 ```
 
 Distribution of Height (cm)
@@ -260,7 +287,6 @@ C_setting
 barplot(C_setting)
 ```
 
-
 #Univariate Analysis of Outcome Variables
 Distribution of Patient Status
 ```{r}
@@ -402,13 +428,21 @@ STRESS
 
 
 ##Bivariate Analysis by subgroup of HF
+age by group
+bmi by group
+htn by group
+comorbidities by group
+medications by group
+smoking by group
+PA by group
+depression by group 
 
 
 ##Bivariate Analysis by Depression 
 Look for significant correlations and identify potential covariates that I need to control for. 
 ```{r}
-#Scatterplot BMI*AGE to observe for any trends
-plot(Meta$BMI_CORRECTED, Meta$AGE_YEARS)
+#Scatterplot BMI*"age" to observe for any trends
+plot(Meta$BMI_CORRECTED, Meta$"age"_YEARS)
 ```
 
 ##Bivariate Analysis with outcome variable

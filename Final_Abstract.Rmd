@@ -1,0 +1,44 @@
+---
+title: "Final Abstract"
+author: "Alyssa Monda"
+date: "11/26/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyverse)
+library(knitr)
+```
+
+
+##Load data into R
+```{r}
+#Load data into R and assign data to the name BB
+library(readr)
+BB <- read_csv("~/Desktop/Biobank.csv", 
+    col_types = cols(hfage = col_double()))
+View(BB)
+```
+
+##Filter Individuals from data set who meet inclusion criteria (Diagnosed with HF, "age" 65+)
+```{r}
+#Subsset by "age" to ensure minimum "age" is 65
+OBB <-subset(BB, age>=65)
+summary(OBB$`age`)
+
+#Subset by HF (1=yes, 0=No) ****Total N for OA with HF = 478 *****
+CVBB <-subset(OBB, hfhist== 1)
+summary(CVBB$hfhist)
+CVBB$hfhist
+
+```
+
+#Distribution of depression diagnosis vs depressive symtpoms 
+```{r}
+hist(CVBB$dephist)
+hist(CVBB$`mdclass#`)
+#Based on distribution it appears it may be best to use depressive symptoms and create 3 groups, minimal to mild, moderate,and  moderately severe to severe. Then compare outcomes of the 3 groups. 
+```
+
