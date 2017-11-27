@@ -99,10 +99,296 @@ describe(DSev,  na.rm=TRUE)
 ```
 
 
+#Turn Numeric variables into factor
+```{r}
+CVBB <- within(CVBB, {
+  aahist <- as.factor(aahist)
+  adace <- as.factor(adace)
+  adarb <- as.factor(adarb)
+  adasp <- as.factor(adasp)
+  adbb <- as.factor(adbb)
+  adcaantag <- as.factor(adcaantag)
+  adcou <- as.factor(adcou)
+  adeze <- as.factor(adeze)
+  adfib <- as.factor(adfib)
+  adfuro <- as.factor(adfuro)
+  adhctz <- as.factor(adhctz)
+  adm_HF <- as.factor(adm_HF)
+  adm_NonCardiac <- as.factor(adm_NonCardiac)
+  adm_NSTEMI <- as.factor(adm_NSTEMI)
+  adm_Other <- as.factor(adm_Other)
+  adm_PerInterv <- as.factor(adm_PerInterv)
+  adm_PosStressTest <- as.factor(adm_PosStressTest)
+  adm_PreOpClear <- as.factor(adm_PreOpClear)
+  adm_STEMI <- as.factor(adm_STEMI)
+  adm_TAVR <- as.factor(adm_TAVR)
+  adm_Transplant <- as.factor(adm_Transplant)
+  adm_UnAngina <- as.factor(adm_UnAngina)
+  adm_Valvular <- as.factor(adm_Valvular)
+  admet <- as.factor(admet)
+  adniacin <- as.factor(adniacin)
+  adnitrate <- as.factor(adnitrate)
+  adpplavix <- as.factor(adpplavix)
+  adspir <- as.factor(adspir)
+  adstat <- as.factor(adstat)
+})
+```
+
+```{r}
+CVBB <- within(CVBB, {
+  apnhist <- as.factor(apnhist)
+  arrhist <- as.factor(arrhist)
+  ashist <- as.factor(ashist)
+  behq2 <- as.factor(behq2)
+  behq6 <- as.factor(behq6)
+  behq8 <- as.factor(behq8)
+  behq9 <- as.factor(behq9)
+  behq10 <- as.factor(behq10)
+  behq14 <- as.factor(behq14)
+})
+```
+
+```{r}
+CVBB <- within(CVBB, {
+  cabg <- as.factor(cabg)
+  cahist <- as.factor(cahist)
+  canhist <- as.factor(canhist)
+})
+```
+
+```{r}
+CVBB <- within(CVBB, {
+  CHDdeath <- as.factor(CHDdeath)
+  CHDdeath1yr <- as.factor(CHDdeath1yr)
+  CHDdeath3yr <- as.factor(CHDdeath3yr)
+  CHDdeath5yr <- as.factor(CHDdeath5yr)
+  CHF <- as.factor(CHF)
+  copdhist <- as.factor(copdhist)
+  cphist <- as.factor(cphist)
+  CVdeath <- as.factor(CVdeath)
+  CVDeath1yr <- as.factor(CVDeath1yr)
+  CVDeath3yr <- as.factor(CVDeath3yr)
+  CVDeath5yr <- as.factor(CVDeath5yr)
+  death <- as.factor(death)
+  death1yr <- as.factor(death1yr)
+  death3yr <- as.factor(death3yr)
+  death5yr <- as.factor(death5yr)
+  dephist <- as.factor(dephist)
+  dmhist <- as.factor(dmhist)
+  educ <- as.factor(educ)
+  es <- as.factor(es)
+  hfage <- as.factor(hfage)
+  hfhist <- as.factor(hfhist)
+  histang <- as.factor(histang)
+  histcath <- as.factor(histcath)
+  histstent <- as.factor(histstent)
+  hldhist <- as.factor(hldhist)
+  hosp <- as.factor(hosp)
+  hospcard <- as.factor(hospcard)
+  hospncard <- as.factor(hospncard)
+  htnhist <- as.factor(htnhist)
+  htvalv <- as.factor(htvalv)
+  ibdhist <- as.factor(ibdhist)
+  icd <- as.factor(icd)
+  icshist <- as.factor(icshist)
+  incp <- as.factor(incp)
+  inpalp <- as.factor(inpalp)
+  insob <- as.factor(insob)
+  insyncope <- as.factor(insyncope)
+  lhc_adm <- as.factor(lhc_adm)
+  MACE <- as.factor(MACE)
+  MACE1yr <- as.factor(MACE1yr)
+  MACE3yr <- as.factor(MACE3yr)
+  MACE5yr <- as.factor(MACE5yr)
+  MALE_Comb <- as.factor(MALE_Comb)
+  MALECV <- as.factor(MALECV)
+  MALECV_Comb <- as.factor(MALECV_Comb)
+  mdappt <- as.factor(mdappt)
+  mdbad <- as.factor(mdbad)
+  mdclass. <- as.factor(mdclass.)
+  mdconc <- as.factor(mdconc)
+  mdcouns <- as.factor(mdcouns)
+  mddead <- as.factor(mddead)
+  mddep <- as.factor(mddep)
+  mdplea <- as.factor(mdplea)
+  mdsleep <- as.factor(mdsleep)
+  mdspeak <- as.factor(mdspeak)
+  mdtired <- as.factor(mdtired)
+})
+```
+
+```{r}
+CVBB <- within(CVBB, {
+  MI <- as.factor(MI)
+  mihist <- as.factor(mihist)
+  ms <- as.factor(ms)
+  nonCVdeath <- as.factor(nonCVdeath)
+  padhist <- as.factor(padhist)
+  pci_adm <- as.factor(pci_adm)
+  permpace <- as.factor(permpace)
+  PTA <- as.factor(PTA)
+  PTA_Comb <- as.factor(PTA_Comb)
+  pvd_adm <- as.factor(pvd_adm)
+  PVDCPT <- as.factor(PVDCPT)
+  race <- as.factor(race)
+})
+```
+
+```{r}
+CVBB <- within(CVBB, {
+  REVASC <- as.factor(REVASC)
+  rhc_adm <- as.factor(rhc_adm)
+  sanyha <- as.factor(sanyha)
+  saqnitro <- as.factor(saqnitro)
+  saqtime <- as.factor(saqtime)
+  Sertraline <- as.factor(Sertraline)
+  setting <- as.factor(setting)
+  slehist <- as.factor(slehist)
+  smoking <- as.factor(smoking)
+  strhist <- as.factor(strhist)
+  STROKE <- as.factor(STROKE)
+})
+```
+
+```{r}
+CVBB <- within(CVBB, {
+  thyhist <- as.factor(thyhist)
+})
+```
+
+```{r}
+CVBB <- within(CVBB, {
+  transp <- as.factor(transp)
+})
+```
+
+```{r}
+CVBB <- within(CVBB, {
+  valhist <- as.factor(valhist)
+  valv_adm <- as.factor(valv_adm)
+  vtehist <- as.factor(vtehist)
+})
+```
 
 
+#ANOVA Tests between groups and numeric variables
+```{r}
+AnovaModel.3 <- aov(age ~ mdgroup, data=CVBB)
+summary(AnovaModel.3)
+with(CVBB, numSummary(age, groups=mdgroup, statistics=c("mean", "sd")))
+```
 
+```{r}
+AnovaModel.4 <- aov(blbmi ~ mdgroup, data=CVBB)
+summary(AnovaModel.4)
+with(CVBB, numSummary(blbmi, groups=mdgroup, statistics=c("mean", "sd")))
+```
 
+```{r}
+AnovaModel.5 <- aov(bsa ~ mdgroup, data=CVBB)
+summary(AnovaModel.5)
+with(CVBB, numSummary(bsa, groups=mdgroup, statistics=c("mean", "sd")))
+```
+
+```{r}
+AnovaModel.6 <- aov(restingdiabp ~ mdgroup, data=CVBB)
+summary(AnovaModel.6)
+with(CVBB, numSummary(restingdiabp, groups=mdgroup, statistics=c("mean", 
+  "sd")))
+```
+
+```{r}
+AnovaModel.7 <- aov(restinghr ~ mdgroup, data=CVBB)
+summary(AnovaModel.7)
+with(CVBB, numSummary(restinghr, groups=mdgroup, statistics=c("mean", 
+  "sd")))
+```
+
+```{r}
+AnovaModel.8 <- aov(restingsysbp ~ mdgroup, data=CVBB)
+summary(AnovaModel.8)
+with(CVBB, numSummary(restingsysbp, groups=mdgroup, statistics=c("mean", 
+  "sd")))
+```
+
+```{r}
+AnovaModel.9 <- aov(timetodeath ~ mdgroup, data=CVBB)
+summary(AnovaModel.9)
+with(CVBB, numSummary(timetodeath, groups=mdgroup, statistics=c("mean", 
+  "sd")))
+```
+
+```{r}
+AnovaModel.10 <- aov(timetodeath1yr ~ mdgroup, data=CVBB)
+summary(AnovaModel.10)
+with(CVBB, numSummary(timetodeath1yr, groups=mdgroup, statistics=c("mean", 
+  "sd")))
+```
+
+```{r}
+AnovaModel.11 <- aov(timetodeath3yr ~ mdgroup, data=CVBB)
+summary(AnovaModel.11)
+with(CVBB, numSummary(timetodeath3yr, groups=mdgroup, statistics=c("mean", 
+  "sd")))
+```
+
+```{r}
+AnovaModel.12 <- aov(timetodeath5yr ~ mdgroup, data=CVBB)
+summary(AnovaModel.12)
+with(CVBB, numSummary(timetodeath5yr, groups=mdgroup, statistics=c("mean", 
+  "sd")))
+```
+
+```{r}
+AnovaModel.13 <- aov(timetohospcard ~ mdgroup, data=CVBB)
+summary(AnovaModel.13)
+with(CVBB, numSummary(timetohospcard, groups=mdgroup, statistics=c("mean", 
+  "sd")))
+```
+
+```{r}
+AnovaModel.14 <- aov(timetohospncard ~ mdgroup, data=CVBB)
+summary(AnovaModel.14)
+with(CVBB, numSummary(timetohospncard, groups=mdgroup, statistics=c("mean", 
+  "sd")))
+```
+
+#ChiSq tests between groups and categorical variables
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+race, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+ms, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+es, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
 
 
 
