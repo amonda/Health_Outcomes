@@ -42,11 +42,14 @@ hist(CVBB$dephist)
 hist(CVBB$`mdclass#`)
 #Based on distribution it appears it may be best to use depressive symptoms and create 3 groups, minimal to mild, moderate,and  moderately severe to severe. Then compare outcomes of the 3 groups. There are a limited number with diagnosed depression which does not match PHQ results. 
 
+#Created subgroup column of groups in excel. Import data back into R.
+#Import CVBB
+library(readr)
+CVBB <- read_csv("~/Desktop/AmericanGut/Big Data/Health_Outcomes/CVBB.csv")
+View(CVBB)
 
-CVBB$mdtype <- CVBB$`mdclass#`
-
-#Number of individuals with reported depression on chart review
-
+#Histogram showing groups of min to mild, mild to moderate, moderate to severe
+hist(CVBB$mdgroup)
 
 #Subset minimal to mild depression
 DMin <-subset(CVBB,mdtype<= 2)
