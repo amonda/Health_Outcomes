@@ -390,6 +390,456 @@ local({
 })
 ```
 
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+educ, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+sanyha, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+smoking, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+htnhist, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+dmhist, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+copdhist, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+canhist, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+cahist, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+strhist, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+dephist, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+apnhist, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+ibdhist, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+thyhist, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+hldhist, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+mdcouns, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+cabg, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+histcath, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+histang, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+histstent, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+transp, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+htvalv, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+permpace, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+icd, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+adace, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+adhctz, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+adfuro, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+adspir, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+adbb, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+adcaantag, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+adasp, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+adcou, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+adpplavix, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+adnitrate, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+admet, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+causeofdeathyr, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+hospcard, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+hospncard, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+CVdeath, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+```{r}
+local({
+  .Table <- xtabs(~mdgroup+nonCVdeath, data=CVBB)
+  cat("\nFrequency table:\n")
+  print(.Table)
+  cat("\nRow percentages:\n")
+  print(rowPercents(.Table))
+  .Test <- chisq.test(.Table, correct=FALSE)
+  print(.Test)
+})
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
