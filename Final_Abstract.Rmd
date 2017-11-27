@@ -825,7 +825,93 @@ local({
   print(.Test)
 })
 ```
+##Univariate
+Skewness and Kurtosis observed in the describe command
+```{r}
+#could also view histograms
+ggplot(CVBB, aes(x=age)) + 
+  geom_histogram(aes(y=..density..), 
+                 binwidth=5,
+                 colour="black", fill="white") +
+  geom_density(alpha=.2, fill="#FF6666") +
+  labs(title="Histogram of Age")
 
+ggplot(CVBB, aes(x=blbmi)) + 
+  geom_histogram(aes(y=..density..), 
+                 binwidth=5,
+                 colour="black", fill="white") +
+  geom_density(alpha=.2, fill="#FF6666") +
+  labs(title="Histogram of BMI")
+
+#Significant difference between group but ~normally distributed and w/in normal clinical range
+ggplot(CVBB, aes(x=restinghr)) + 
+  geom_histogram(aes(y=..density..), 
+                 binwidth=5,
+                 colour="black", fill="white") +
+  geom_density(alpha=.2, fill="#FF6666") +
+  labs(title="Histogram of HR")
+
+```
+
+###Combine marital Status variables
+Partnered vs non-partnered 
+```{r}
+CVBB$Single <- CVBB$ms
+CVBB$Single
+
+dataA$var1r <- factor(dataA$var1r,
+                      levels=c(0,1),
+                      labels=c("NO var1 <= 3",
+                               "YES var1 > 3")) 
+```
+
+Now check for significant difference between groups again using chisq 
+```{r}
+# the correlations
+psych::corr.test(helpset1[,vars],
+                 method="pearson")
+
+# save the results
+pc <- psych::corr.test(helpset1[,vars],
+                       method="pearson")
+# look at correlations
+pc$r
+```
+
+
+
+## Bivariate Stats
+Continuous using Pearson R
+```{r}
+# the correlations
+psych::corr.test(CVBB[,vars],
+                 method="pearson")
+
+# save the results
+pc <- psych::corr.test(CVBB[,vars],
+                       method="pearson")
+# look at correlations
+pc$r
+
+# t-test for each correlation
+pc$t
+
+# p-value of each t-test for correlation
+pc$p
+
+# confidence intervals for each pair
+# removes the diagonal values and tests
+pc$ci
+
+# also look at spearmans rho
+pc <- psych::corr.test(helpset1[,vars],
+                       method="spearman")
+pc$ci
+
+```
+
+
+Categorical using t test or ANOVA
 
 
 
